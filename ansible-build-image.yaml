@@ -2,9 +2,6 @@
 - hosts: 127.0.0.1
 
   tasks:
-    - name: Increment variable
-      set_fact: file_number={{ file_number | int + 1 }}
-
     - name: Stop Running Process
       command: docker stop spring-boot-kotlin-cont
       ignore_errors: yes
