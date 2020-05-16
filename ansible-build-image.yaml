@@ -1,10 +1,9 @@
 ---
-  tag_version: 4
 - hosts: 127.0.0.1
 
   tasks:
     - name: Increment variable
-      set_fact: tag_version={{ tag_version | int + 1 }}
+      set_fact: file_number={{ file_number | int + 1 }}
 
     - name: Stop Running Process
       command: docker stop spring-boot-kotlin-cont
@@ -15,17 +14,17 @@
       ignore_errors: yes
 
     - name: Remove Image
-      command: docker rmi spring-boot-kotlin:{{tag_version}} rajeshg87/spring-boot-kotlin:{{tag_version}}
+      command: docker rmi spring-boot-kotlin:latest rajeshg87/spring-boot-kotlin:latest
       ignore_errors: yes
 
     - name: Build Docker Image using Spring Boot Jar and Dockerfile
-      command: docker build -t rajeshg87/spring-boot-kotlin:{{tag_version}} .
+      command: docker build -t rajeshg87/spring-boot-kotlin:latest .
 
     - name: Tag Docker image
-      command: docker tag rajeshg87/spring-boot-kotlin rajeshg87/spring-boot-kotlin:{{tag_version}}
+      command: docker tag rajeshg87/spring-boot-kotlin rajeshg87/spring-boot-kotlin:latest
 
     - name: Docker Push Image
-      command: docker push rajeshg87/spring-boot-kotlin:{{tag_version}}
+      command: docker push rajeshg87/spring-boot-kotlin:latest
 
     - name: Run Docker Container with Image spring-boot-kotlin
       command: docker run -p 8080:8080 --name=spring-boot-kotlin-cont -d  rajeshg87/spring-boot-kotlin
