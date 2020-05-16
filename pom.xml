@@ -84,6 +84,9 @@
                                 <echo>Using env.test.properties</echo>
                                 <copy file="Dockerfile" tofile="${basedir}/target/Dockerfile"/>
                                 <copy file="ansible-build-image.yaml" tofile="${basedir}/target/ansible-build-image.yaml"/>
+                                <copy file="ansible-kubernetes-build.yaml" tofile="${basedir}/target/ansible-kubernetes-build.yaml"/>
+                                <copy file="spring-boot-kotlin-deploy.yaml" tofile="${basedir}/target/spring-boot-kotlin-deploy.yaml"/>
+                                <copy file="spring-boot-kotlin-svc.yaml" tofile="${basedir}/target/spring-boot-kotlin-svc.yaml"/>
                             </tasks>
                         </configuration>
                     </execution>
