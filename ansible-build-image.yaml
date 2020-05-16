@@ -11,11 +11,17 @@
       ignore_errors: yes
 
     - name: Remove Image
-      command: docker rmi spring-boot-kotlin
+      command: docker rmi spring-boot-kotlin:latest rajeshg87/spring-boot-kotlin:latest
       ignore_errors: yes
 
     - name: Build Docker Image using Spring Boot Jar and Dockerfile
       command: docker build -t spring-boot-kotlin .
+
+    - name: Tag Docker image
+      command: docker tag spring-boot-kotlin rajeshg87/spring-boot-kotlin
+
+    - name: Docker Push Imahe
+        command: docker push rajeshg87/spring-boot-kotlin
 
     - name: Run Docker Container with Image spring-boot-kotlin
       command: docker run -p 8080:8080 --name=spring-boot-kotlin-cont -d  spring-boot-kotlin
