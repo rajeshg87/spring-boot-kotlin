@@ -83,6 +83,7 @@
                             <tasks>
                                 <echo>Using env.test.properties</echo>
                                 <copy file="Dockerfile" tofile="${basedir}/target/Dockerfile"/>
+                                <copy file="ansible-build-image.yaml" tofile="${basedir}/target/ansible-build-image.yaml"/>
                             </tasks>
                         </configuration>
                     </execution>

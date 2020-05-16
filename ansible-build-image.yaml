@@ -1,0 +1,6 @@
+---
+- hosts: all
+
+  tasks:
+    - name: Build Docker Image using Spring Boot Jar and Dockerfile
+      command: docker build -t ansible-build-image .
