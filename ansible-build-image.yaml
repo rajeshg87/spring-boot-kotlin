@@ -18,10 +18,10 @@
       command: docker build -t rajeshg87/spring-boot-kotlin:latest .
 
     - name: Tag Docker image
-      command: docker tag rajeshg87/spring-boot-kotlin
+      command: docker tag rajeshg87/spring-boot-kotlin rajeshg87/spring-boot-kotlin:latest
 
     - name: Docker Push Image
-      command: docker push rajeshg87/spring-boot-kotlin
+      command: docker push rajeshg87/spring-boot-kotlin:latest
 
     - name: Run Docker Container with Image spring-boot-kotlin
       command: docker run -p 8080:8080 --name=spring-boot-kotlin-cont -d  spring-boot-kotlin
