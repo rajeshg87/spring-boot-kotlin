@@ -24,4 +24,4 @@
       command: docker push rajeshg87/spring-boot-kotlin:latest
 
     - name: Run Docker Container with Image spring-boot-kotlin
-      command: docker run -p 8080:8080 --name=spring-boot-kotlin-cont -d  spring-boot-kotlin
+      command: docker run -p 8080:8080 --name=spring-boot-kotlin-cont -d  rajeshg87/spring-boot-kotlin
