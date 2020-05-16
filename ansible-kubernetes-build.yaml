@@ -1,0 +1,17 @@
+---
+- hosts: 127.0.0.1
+
+  tasks:
+    - name: Delete Kubernetes Deployment
+      command: kubectl delete deployment spring-boot-kotlin-deploy
+      ignore_errors: yes
+
+    - name: Delete Kubernetes Deployment
+      command: kubectl delete svc spring-boot-kotlin-svc
+      ignore_errors: yes
+
+    - name: Kubernetes create deployment spring-boot-kotlin-deploy
+      command: kubectl apply -f spring-boot-kotlin-deploy.yaml
+
+    - name: Kubernetes create Service spring-boot-kotlin-svc
+      command: kubectl apply -f spring-boot-kotlin-svc.yaml
