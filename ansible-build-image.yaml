@@ -20,8 +20,8 @@
     - name: Tag Docker image
       command: docker tag spring-boot-kotlin rajeshg87/spring-boot-kotlin
 
-    - name: Docker Push Imahe
-        command: docker push rajeshg87/spring-boot-kotlin
+    - name: Docker Push Image
+      command: docker push rajeshg87/spring-boot-kotlin
 
     - name: Run Docker Container with Image spring-boot-kotlin
       command: docker run -p 8080:8080 --name=spring-boot-kotlin-cont -d  spring-boot-kotlin
