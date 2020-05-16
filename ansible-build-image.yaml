@@ -1,6 +1,8 @@
 ---
-- hosts: all
+- hosts: 127.0.0.1
 
   tasks:
     - name: Build Docker Image using Spring Boot Jar and Dockerfile
-      command: docker build -t ansible-build-image .
+      command: docker build -t spring-boot-kotlin .
+    - name: Run Docker Container with Image spring-boot-kotlin
+      command: docker run -p 8080:8080 --name=spring-boot-kotlin-cont -d  spring-boot-kotlin
